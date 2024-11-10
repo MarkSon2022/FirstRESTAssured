@@ -16,7 +16,7 @@ public class AnhTester2 {
     String TOKEN;
     String ID;
 
-    @Test
+    @Test(priority = 1)
     public void testRegisterUser() {
         //Initialize data for all fields of Register User
         RegisterUserPOJO registerUserPOJO = new RegisterUserPOJO();
@@ -49,10 +49,10 @@ public class AnhTester2 {
         //Verify message
         String message = response.getBody().path("message");
         Assert.assertEquals(message, "Success", "This message does not match.");
-        ID=response.getBody().path("response.id");
+        ID=response.getBody().path("response.id").toString();
     }
 
-    @Test
+    @Test(priority = 2)
     public void testLoginUser() {
         // Generate data for user
         LoginPOJO loginPOJO = new LoginPOJO("anhtester", "Demo@123");
@@ -79,7 +79,7 @@ public class AnhTester2 {
     }
 
     //Example with put:
-    @Test
+    @Test(priority = 3)
     public  void testEditUser_HasAuth(){
         RegisterUserPOJO registerUserPOJO= new RegisterUserPOJO();
         registerUserPOJO.setUsername("sonng111");
@@ -99,7 +99,7 @@ public class AnhTester2 {
                 .headers("Authorization","Bearer "+TOKEN)
                 .body(gson.toJson(registerUserPOJO));
 
-        Response response= request.when().put("/user/2");
+        Response response= request.when().put("/user/128");
         response.prettyPrint();
 
         response.then().statusCode(200);
@@ -108,7 +108,7 @@ public class AnhTester2 {
         Assert.assertEquals(message,"Success","The message does not match.");
     }
 
-    @Test
+    @Test(priority = 4)
     public  void  testUpdateUser_PATCH(){
         //Preparing data for edit user
         PatchUserPOJO patchUserPOJO =
@@ -116,13 +116,13 @@ public class AnhTester2 {
         //
         Gson gson=new Gson();
         RequestSpecification request= given();
-        request.baseUri("http://api.anhtester.com/api")
+        request.baseUri("https://api.anhtester.com/api")
                 .accept(ContentType.JSON)
                 .contentType(ContentType.JSON)
                 .headers("Authorization", "Bearer "+TOKEN)
                 .body(gson.toJson(patchUserPOJO));
         //
-        Response response=request.when().patch("/user/2");
+        Response response=request.when().patch("/user/128");
         response.prettyPrint();
 
         response.then().statusCode(200);
@@ -131,15 +131,14 @@ public class AnhTester2 {
         Assert.assertEquals(message,"Success"," The message does not match.");
     }
 
-    @Test
+    @Test(priority = 5)
     public void testDeleteUser_DELETE(){
         //
         String username="anhtester2002";
 
         RequestSpecification request= given();
-        request.baseUri("http://api.anhtester.com/api")
-                .accept(ContentType.JSON)
-                .contentType(ContentType.JSON)
+        request.baseUri("https://api.anhtester.com/api")
+                .accept("*/*")
                 .headers("Authorization","Bearer "+TOKEN)
                 .queryParam("username", username);
 
