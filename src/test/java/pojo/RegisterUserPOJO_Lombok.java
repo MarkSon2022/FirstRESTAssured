@@ -1,13 +1,18 @@
 package pojo;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import net.datafaker.Faker;
+
+import java.util.Locale;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterUserPOJO {
+@Builder
+public class RegisterUserPOJO_Lombok {
     private String username;
     private String firstName;
     private String lastName;

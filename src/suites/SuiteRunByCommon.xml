@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SuiteRunByCommon" verbose="1">
+    <test name="FirstTestMethod">
+        <packages>
+            <package name="firstpackage"/>
+        </packages>
+        <classes>
+            <class name="secondpackage.FirstClass">
+                <methods>
+                    <include name="firstTest"/>
+                </methods>
+            </class>
+            <class name="secondpackage.SecondClass"/>
+        </classes>
+    </test>
+</suite>

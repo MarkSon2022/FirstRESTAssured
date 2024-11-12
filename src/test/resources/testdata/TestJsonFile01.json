@@ -1,0 +1,20 @@
+{
+  "firstname": "Anh",
+  "lastname": "Tester",
+  "totalprice": 111,
+  "depositpaid": true,
+  "bookingdates": {
+    "checkin": "2024-10-10",
+    "checkout": "2024-03-09"
+  },
+  "additionalneeds": "Technology",
+  "department": [
+    "Support",
+    "ERP"
+  ],
+  "key1": "Value for Key 1",
+  "student": {
+    "name": "Son Tester",
+    "age": 27
+  }
+}

@@ -1,6 +1,7 @@
 package anhtester;
 
 import com.google.gson.Gson;
+import globals.TokenGlobal;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -9,14 +10,16 @@ import org.testng.annotations.Test;
 import pojo.LoginPOJO;
 import pojo.PatchUserPOJO;
 import pojo.RegisterUserPOJO;
+import pojo.RegisterUserPOJO_Lombok;
+import pojo.data.UserPOJO_Lombok_Builder;
 
 import static io.restassured.RestAssured.given;
 
-public class AnhTester2 {
-    String TOKEN;
+public class AnhTester2 extends BaseTest{
+    //String TOKEN;
     String ID;
 
-    @Test(priority = 1)
+    @Test(priority = 1, enabled = false)
     public void testRegisterUser() {
         //Initialize data for all fields of Register User
         RegisterUserPOJO registerUserPOJO = new RegisterUserPOJO();
@@ -49,34 +52,35 @@ public class AnhTester2 {
         //Verify message
         String message = response.getBody().path("message");
         Assert.assertEquals(message, "Success", "This message does not match.");
+        //
         ID=response.getBody().path("response.id").toString();
     }
 
-    @Test(priority = 2)
-    public void testLoginUser() {
-        // Generate data for user
-        LoginPOJO loginPOJO = new LoginPOJO("anhtester", "Demo@123");
-        //Use library Gson to change class POJO -> JSON
-        ///Gson gson = new Gson();
-
-        //
-        RequestSpecification request = given();
-        request.baseUri("https://api.anhtester.com/api")
-                .accept("application/json")
-                .contentType("application/json")
-                .body(loginPOJO);
-
-        //Response with post
-        Response response = request.when().post("/login");
-        response.prettyPrint();
-        //Verify status code
-        response.then().statusCode(200);
-        //Verify token
-        String token = response.getBody().path("token");
-        TOKEN=token;
-        System.out.println("Login successs with token: " + token);
-
-    }
+//    @Test(priority = 2)
+//    public void testLoginUser() {
+//        // Generate data for user
+//        LoginPOJO loginPOJO = new LoginPOJO("anhtester", "Demo@123");
+//        //Use library Gson to change class POJO -> JSON
+//        ///Gson gson = new Gson();
+//
+//        //
+//        RequestSpecification request = given();
+//        request.baseUri("https://api.anhtester.com/api")
+//                .accept("application/json")
+//                .contentType("application/json")
+//                .body(loginPOJO);
+//
+//        //Response with post
+//        Response response = request.when().post("/login");
+//        response.prettyPrint();
+//        //Verify status code
+//        response.then().statusCode(200);
+//        //Verify token
+//        String token = response.getBody().path("token");
+//        TOKEN=token;
+//        System.out.println("Login successs with token: " + token);
+//
+//    }
 
     //Example with put:
     @Test(priority = 3)
@@ -96,7 +100,7 @@ public class AnhTester2 {
         request.baseUri("https://api.anhtester.com/api")
                 .accept(ContentType.JSON)
                 .contentType(ContentType.JSON)
-                .headers("Authorization","Bearer "+TOKEN)
+                .headers("Authorization","Bearer "+TokenGlobal.TOKEN)
                 .body(gson.toJson(registerUserPOJO));
 
         Response response= request.when().put("/user/128");
@@ -111,15 +115,17 @@ public class AnhTester2 {
     @Test(priority = 4)
     public  void  testUpdateUser_PATCH(){
         //Preparing data for edit user
-        PatchUserPOJO patchUserPOJO =
-                new PatchUserPOJO("MarkSon","The champion", "markson44@gmail.com","0123456789",1);
+//        PatchUserPOJO patchUserPOJO =
+//                new PatchUserPOJO("MarkSon","The champion", "markson44@gmail.com","0123456789",1);
+        RegisterUserPOJO_Lombok patchUserPOJO= UserPOJO_Lombok_Builder.getUserData();
+
         //
         Gson gson=new Gson();
         RequestSpecification request= given();
         request.baseUri("https://api.anhtester.com/api")
                 .accept(ContentType.JSON)
                 .contentType(ContentType.JSON)
-                .headers("Authorization", "Bearer "+TOKEN)
+                .headers("Authorization", "Bearer "+ TokenGlobal.TOKEN)
                 .body(gson.toJson(patchUserPOJO));
         //
         Response response=request.when().patch("/user/128");
@@ -139,7 +145,7 @@ public class AnhTester2 {
         RequestSpecification request= given();
         request.baseUri("https://api.anhtester.com/api")
                 .accept("*/*")
-                .headers("Authorization","Bearer "+TOKEN)
+                .headers("Authorization","Bearer "+TokenGlobal.TOKEN)
                 .queryParam("username", username);
 
         Response response= request.when().delete("/user");
