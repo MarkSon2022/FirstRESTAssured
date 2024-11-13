@@ -1,27 +1,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="SuiteRunByClass" verbose="1">
-    <test name="FirstTest">
+    <test name="First test">
         <classes>
             <class name="firstpackage.FirstClass"/>
             <class name="firstpackage.SecondClass"/>
+        </classes>
+    </test>
+
+    <test name="Second test">
+        <classes>
+            <class name="secondpackage.FirstClass"/>
             <class name="secondpackage.SecondClass" />
         </classes>
     </test>
 
-    <test name="FirstTest">
-        <classes>
-            <class name="firstpackage.FirstClass"/>
-            <class name="firstpackage.SecondClass"/>
-            <class name="secondpackage.SecondClass" />
-        </classes>
-    </test>
-
-    <test name="FirstTest">
-        <classes>
-            <class name="firstpackage.FirstClass"/>
-            <class name="firstpackage.SecondClass"/>
-            <class name="secondpackage.SecondClass" />
-        </classes>
-    </test>
 </suite>

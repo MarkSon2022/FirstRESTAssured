@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SuiteRunByClass" verbose="1">
+    <listeners>
+        <listener class-name="anhtester.TestListener"/>
+    </listeners>
+
+    <test name="First test">
+        <classes>
+            <class name="firstpackage.FirstClass"/>
+        </classes>
+    </test>
+</suite>

@@ -6,21 +6,25 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pojo.LoginPOJO;
 import pojo.PatchUserPOJO;
 import pojo.RegisterUserPOJO;
 import pojo.RegisterUserPOJO_Lombok;
 import pojo.data.UserPOJO_Lombok_Builder;
+import utils.LogUtils;
 
 import static io.restassured.RestAssured.given;
 
+@Listeners(TestListener.class)
 public class AnhTester2 extends BaseTest{
     //String TOKEN;
     String ID;
 
-    @Test(priority = 1, enabled = false)
+    @Test(priority = 1)
     public void testRegisterUser() {
+        LogUtils.info("Create User: ");
         //Initialize data for all fields of Register User
         RegisterUserPOJO registerUserPOJO = new RegisterUserPOJO();
         registerUserPOJO.setUsername("anhtester2002");
@@ -85,6 +89,8 @@ public class AnhTester2 extends BaseTest{
     //Example with put:
     @Test(priority = 3)
     public  void testEditUser_HasAuth(){
+        LogUtils.info("Update User With POJO");
+        //
         RegisterUserPOJO registerUserPOJO= new RegisterUserPOJO();
         registerUserPOJO.setUsername("sonng111");
         registerUserPOJO.setPassword("Demo@123");
@@ -114,6 +120,7 @@ public class AnhTester2 extends BaseTest{
 
     @Test(priority = 4)
     public  void  testUpdateUser_PATCH(){
+        LogUtils.info("Update User PATCH with Lombok");
         //Preparing data for edit user
 //        PatchUserPOJO patchUserPOJO =
 //                new PatchUserPOJO("MarkSon","The champion", "markson44@gmail.com","0123456789",1);
@@ -139,6 +146,7 @@ public class AnhTester2 extends BaseTest{
 
     @Test(priority = 5)
     public void testDeleteUser_DELETE(){
+        LogUtils.info("Delete USER");
         //
         String username="anhtester2002";
 
