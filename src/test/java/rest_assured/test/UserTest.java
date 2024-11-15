@@ -26,21 +26,21 @@ public class UserTest extends BaseTest {
         registerUser.setUserStatus(1);
 
         //
-        Response response= UserEndPoints.registerUser(registerUser);
+        Response response = UserEndPoints.registerUser(registerUser);
 
         //
-        userId=response.getBody().path("response.id").toString();
-        username= response.getBody().path("response.username").toString();
+        userId = response.getBody().path("response.id").toString();
+        username = response.getBody().path("response.username").toString();
 
         //
         response.prettyPrint();
-        Assert.assertEquals(response.getStatusCode(),200);
-        String message= response.getBody().path("message");
-        Assert.assertEquals(message,"Success","This message does not match");
+        Assert.assertEquals(response.getStatusCode(), 200);
+        String message = response.getBody().path("message");
+        Assert.assertEquals(message, "Success", "This message does not match");
     }
 
     @Test(priority = 2)
-    public void testEditUser(){
+    public void testEditUser() {
         //
         UpdateUser user = new UpdateUser();
         user.setUsername("sonnt2077");
@@ -52,17 +52,17 @@ public class UserTest extends BaseTest {
         user.setUserStatus(1);
 
         //
-        Response response= UserEndPoints.updateUser(user, TokenGlobal.TOKEN);
+        Response response = UserEndPoints.updateUser(user, TokenGlobal.TOKEN);
 
         //
         response.prettyPrint();
-        Assert.assertEquals(response.getStatusCode(),200);
-        String message= response.jsonPath().getString("message");
-        Assert.assertEquals(message,"Success","This message does not match");
+        Assert.assertEquals(response.getStatusCode(), 200);
+        String message = response.jsonPath().getString("message");
+        Assert.assertEquals(message, "Success", "This message does not match");
     }
 
     @Test(priority = 3)
-    public void testEditPartOfUser(){
+    public void testEditPartOfUser() {
         //
         UpdateUser user = new UpdateUser();
         user.setUsername("nghiadt2099");
@@ -74,24 +74,24 @@ public class UserTest extends BaseTest {
         user.setUserStatus(1);
 
         //
-        Response response= UserEndPoints.updatePartiallyUser(user, TokenGlobal.TOKEN);
+        Response response = UserEndPoints.updatePartiallyUser(user, TokenGlobal.TOKEN);
 
         //
         response.prettyPrint();
-        Assert.assertEquals(response.getStatusCode(),200);
-        String message= response.jsonPath().getString("message");
-        Assert.assertEquals(message,"Success","This message does not match");
+        Assert.assertEquals(response.getStatusCode(), 200);
+        String message = response.jsonPath().getString("message");
+        Assert.assertEquals(message, "Success", "This message does not match");
     }
 
     @Test(priority = 4)
-    public void testDeleteUser(){
+    public void testDeleteUser() {
         //
-        Response response= UserEndPoints.deleteUser(username,TokenGlobal.TOKEN);
+        Response response = UserEndPoints.deleteUser(username, TokenGlobal.TOKEN);
 
         //
         response.prettyPrint();
-        Assert.assertEquals(response.getStatusCode(),200);
-        String message= response.jsonPath().getString("message");
-        Assert.assertEquals(message,"Success","This message does not match");
+        Assert.assertEquals(response.getStatusCode(), 200);
+        String message = response.jsonPath().getString("message");
+        Assert.assertEquals(message, "Success", "This message does not match");
     }
 }
