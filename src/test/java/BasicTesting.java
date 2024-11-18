@@ -24,7 +24,7 @@ public class BasicTesting {
     String currentAddress;
     String newAddress;
 
-    //Add place -> Upadate Place with new address -> Get Place to validate if New add is present in
+    //Add place -> Upadate AddPlace with new address -> Get AddPlace to validate if New add is present in
     @Test(priority = 1)
     public void testAddPlace () throws IOException {
         //payload.addPlace()

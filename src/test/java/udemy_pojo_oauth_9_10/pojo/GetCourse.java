@@ -1,4 +1,4 @@
-package pojo.udemy;
+package udemy_pojo_oauth_9_10.pojo;
 
 
 public class GetCourse {
