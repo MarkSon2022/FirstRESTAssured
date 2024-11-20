@@ -1,8 +1,9 @@
 package rest_assured.payload.response;
 
-public class RegisterUserResponse {
+public class DeleteUserResponse {
+
     private String message;
-    private RegisterUser response;
+    private DeleteUser response;
 
     public String getMessage() {
         return message;
@@ -12,11 +13,11 @@ public class RegisterUserResponse {
         this.message = message;
     }
 
-    public RegisterUser getResponse() {
+    public DeleteUser getResponse() {
         return response;
     }
 
-    public void setResponse(RegisterUser response) {
+    public void setResponse(DeleteUser response) {
         this.response = response;
     }
 }

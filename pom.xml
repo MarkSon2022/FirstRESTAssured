@@ -29,6 +29,7 @@
             <version>7.10.2</version>
             <scope>test</scope>
         </dependency>
+
         <!--   For Using Equal to in THEN      -->
         <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest -->
         <dependency>
@@ -44,7 +45,7 @@
             <version>2.11.0</version>
         </dependency>
 
-        <!--        Lombok is here for easy contructor  -->
+        <!--        Lombok is here for easy constructor  -->
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -60,7 +61,6 @@
             <artifactId>junit-platform-launcher</artifactId>
             <version>1.11.3</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -80,8 +80,15 @@
             <version>5.11.3</version>
         </dependency>
 
+        <!--        convert XML to JSON-->
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20240303</version>
+        </dependency>
 
-        <!--       SLF4J providers were found. -->
+        <!--       SLF4J providers simple log in console. -->
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -97,14 +104,13 @@
             <scope>test</scope>
         </dependency>
 
-        <!--        Another logging -->
+        <!--   Logging Log4j2 -->
         <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>2.23.0</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>

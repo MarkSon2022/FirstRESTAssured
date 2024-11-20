@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeTest;
 import rest_assured.endpoints.LoginEndPoints;
 import rest_assured.globals.TokenGlobal;
 import rest_assured.payload.request.LoginRequest;
+import rest_assured.payload.response.LoginResponse;
 
 public class BaseTest {
 
@@ -16,14 +17,11 @@ public class BaseTest {
         LoginRequest user = new LoginRequest("anhtester", "Demo@123");
 
         //Get Response
-        Response loginResponse = LoginEndPoints.Login(user);
+        LoginResponse loginResponse = LoginEndPoints.Login(user).as(LoginResponse.class);
 
         //Validate response
-        loginResponse.prettyPrint();
-        Assert.assertEquals(loginResponse.getStatusCode(), 200);
-
-        TokenGlobal.TOKEN = loginResponse.jsonPath().getString("token");
-        System.out.println("Login success with token: " + TokenGlobal.TOKEN);
+        TokenGlobal.TOKEN = loginResponse.getToken();
+        System.out.println("Login success with token: " + TokenGlobal.TOKEN+"\n");
     }
 
 }

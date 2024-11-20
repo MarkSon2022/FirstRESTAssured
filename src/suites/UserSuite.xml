@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Run User API">
+    <listeners>
+        <listener class-name="rest_assured.listener.TestListener"/>
+    </listeners>
+    <test name="User Test" parallel="classes">
+        <classes>
+            <class name="rest_assured.test.UserTest"/>
+        </classes>
+    </test>
+</suite>
