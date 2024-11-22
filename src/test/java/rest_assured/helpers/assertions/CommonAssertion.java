@@ -23,7 +23,7 @@ public class CommonAssertion {
         Assert.assertEquals(response.getContentType(), contentType, "The content-type should match!!");
     }
 
-    public static void assertHeaders(Response response, String headerName, String headerValue) {
+    public static void assertHeader(Response response, String headerName, String headerValue) {
         //application/json
         Assert.assertNotNull(response.getHeader(headerName),"The header should exist");
         Assert.assertEquals(response.getHeader(headerName), headerValue, "The header value should match!!");

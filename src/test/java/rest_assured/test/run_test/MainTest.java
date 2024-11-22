@@ -3,6 +3,7 @@ package rest_assured.test.run_test;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import rest_assured.api.UserApi;
+import rest_assured.helpers.assertions.UserAssertion;
 import rest_assured.test.basetest.BaseTest;
 
 @Listeners({
@@ -11,8 +12,8 @@ import rest_assured.test.basetest.BaseTest;
 })
 public class MainTest extends BaseTest {
 
-    @Test
-    public static void ValidFlowUser() {
+    @Test(testName = "Test Full Flow From Login User - Register User - Search User - Edit User - Delete User")
+    public static void testValidFlowUser() {
         UserApi.testRegisterUser();
         UserApi.testSearchUserByUsername();
         UserApi.testEditUser();

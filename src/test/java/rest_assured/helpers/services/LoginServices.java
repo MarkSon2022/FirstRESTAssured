@@ -16,32 +16,28 @@ public class LoginServices {
         Response response = given()
                 .spec(SpecBuilder.getRequestSpecNoAuthBuilder())
                 .body(userLogin)
-                .when().post(Routes.login_URL)
-                .then().spec(SpecBuilder.getResponseSpecBuilder(200))
-                .extract().response();
+                .when().post(Routes.login_URL);
 
         return response;
     }
 
-    public static Response LoginWithJson(String fileName){
+    public static Response LoginWithJson(String fileName) {
         String filePath = "src/test/resources/testdata/";
-        Response response=given()
+        Response response = given()
                 .spec(SpecBuilder.getRequestSpecNoAuthBuilder())
-                .body(new File(filePath+fileName))
+                .body(new File(filePath + fileName))
                 .when().post(Routes.login_URL)
-                .then().spec(SpecBuilder.getResponseSpecBuilder(200))
+                .then()
                 .extract().response();
 
         return response;
     }
 
-    public static Response LoginWithXML(String fileName, String key){
-        Response response=given()
+    public static Response LoginWithXML(String fileName, String key) {
+        Response response = given()
                 .spec(SpecBuilder.getRequestSpecNoAuthBuilder())
-                .body(ConvertUtils.convertXmlFileToJsonString(fileName,key))
-                .when().post(Routes.login_URL)
-                .then().spec(SpecBuilder.getResponseSpecBuilder(200))
-                .extract().response();
+                .body(ConvertUtils.convertXmlFileToJsonString(fileName, key))
+                .when().post(Routes.login_URL);
 
         return response;
     }

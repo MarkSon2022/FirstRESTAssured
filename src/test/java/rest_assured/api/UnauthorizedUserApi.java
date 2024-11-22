@@ -27,6 +27,10 @@ public class UnauthorizedUserApi {
 
         Response response = UserServices.updateUserNoAuth(user, userId);
 
+        //
+        CommonAssertion.assertHeader(response,"vary","Accept-Encoding");
+        CommonAssertion.assertStatusCode(response,401);
+        CommonAssertion.assertContentType(response, "application/json");
         CommonAssertion.assertUnauthorized(response);
     }
 
@@ -45,7 +49,10 @@ public class UnauthorizedUserApi {
         //
         Response response = UserServices.updatePartiallyUserNoAuth(user, userId);
 
-
+        //
+        CommonAssertion.assertHeader(response,"vary","Accept-Encoding");
+        CommonAssertion.assertStatusCode(response,401);
+        CommonAssertion.assertContentType(response, "application/json");
         CommonAssertion.assertUnauthorized(response);
     }
 
@@ -54,6 +61,9 @@ public class UnauthorizedUserApi {
         //
         Response response = UserServices.deleteUserNoAuth(username);
         //
+        CommonAssertion.assertHeader(response,"vary","Accept-Encoding");
+        CommonAssertion.assertStatusCode(response,401);
+        CommonAssertion.assertContentType(response, "application/json");
         CommonAssertion.assertUnauthorized(response);
     }
 

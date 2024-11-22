@@ -1,6 +1,8 @@
 package rest_assured.api;
 
 import io.restassured.response.Response;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import rest_assured.helpers.assertions.CommonAssertion;
 import rest_assured.helpers.assertions.UserAssertion;
@@ -15,7 +17,7 @@ public class UserApi extends BaseTest {
 
     private static String username;
     private static String userId;
-
+    
 
     @Test(priority = 1, testName = "Test Register User")
     public static void testRegisterUser() {
@@ -35,7 +37,9 @@ public class UserApi extends BaseTest {
         //
         username = registerUserResponse.jsonPath().getString("response.username");
 
-        CommonAssertion.assertStatusCode(registerUserResponse,200);
+        //
+        CommonAssertion.assertHeader(registerUserResponse, "vary", "Accept-Encoding");
+        CommonAssertion.assertStatusCode(registerUserResponse, 200);
         CommonAssertion.assertContentType(registerUserResponse, "application/json");
         UserAssertion.assertMessage(registerUserResponse, "Success");
         UserAssertion.assertUsername(registerUserResponse, registerUser.getUsername());
@@ -48,13 +52,16 @@ public class UserApi extends BaseTest {
         //
         userId = response.jsonPath().getString("response.id");
 
-        CommonAssertion.assertStatusCode(response,200);
+        //
+        CommonAssertion.assertHeader(response, "vary", "Accept-Encoding");
+        CommonAssertion.assertStatusCode(response, 200);
+        CommonAssertion.assertContentType(response, "application/json");
         UserAssertion.assertMessage(response, "Success");
         UserAssertion.assertUsername(response, username);
     }
 
 
-    @Test(priority = 3)
+    @Test(priority = 3, testName = "Test Edit User With POST method")
     public static void testEditUser() {
         //
         UpdateUser user = new UpdateUser();
@@ -70,12 +77,14 @@ public class UserApi extends BaseTest {
         Response updateUserResponse = UserServices.updateUser(user, userId, TokenGlobal.TOKEN);
 
         //
-        CommonAssertion.assertStatusCode(updateUserResponse,200);
+        CommonAssertion.assertHeader(updateUserResponse, "vary", "Accept-Encoding");
+        CommonAssertion.assertStatusCode(updateUserResponse, 200);
+        CommonAssertion.assertContentType(updateUserResponse, "application/json");
         UserAssertion.assertMessage(updateUserResponse, "Success");
         UserAssertion.assertUsername(updateUserResponse, user.getUsername());
     }
 
-    @Test(priority = 4)
+    @Test(priority = 4, testName = "Test Part Of User with PATCH method")
     public static void testEditPartOfUser() {
         //
         UpdateUser user = new UpdateUser();
@@ -88,20 +97,24 @@ public class UserApi extends BaseTest {
         user.setUserStatus(1);
 
         //
-        Response updateUserResponse = UserServices.updatePartiallyUser(user, userId, TokenGlobal.TOKEN);
+        Response updateUserResponse = UserServices.updatePartiallyUser(user, userId);
 
         //
-        CommonAssertion.assertStatusCode(updateUserResponse,200);
+        CommonAssertion.assertHeader(updateUserResponse, "vary", "Accept-Encoding");
+        CommonAssertion.assertStatusCode(updateUserResponse, 200);
+        CommonAssertion.assertContentType(updateUserResponse, "application/json");
         UserAssertion.assertMessage(updateUserResponse, "Success");
         UserAssertion.assertFirstName(updateUserResponse, user.getFirstName());
     }
 
-    @Test(priority = 5)
+    @Test(priority = 5, testName = "Test Delete User")
     public static void testDeleteUser() {
         //
-        Response deleteUserResponse = UserServices.deleteUser(username, TokenGlobal.TOKEN);
+        Response deleteUserResponse = UserServices.deleteUser("anhtester2002");
         //
-        CommonAssertion.assertStatusCode(deleteUserResponse,200);
+        CommonAssertion.assertHeader(deleteUserResponse, "vary", "Accept-Encoding");
+        CommonAssertion.assertStatusCode(deleteUserResponse, 200);
+        CommonAssertion.assertContentType(deleteUserResponse, "application/json");
         UserAssertion.assertMessage(deleteUserResponse, "Success");
         UserAssertion.assertUsername(deleteUserResponse, username);
     }

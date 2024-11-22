@@ -1,0 +1,643 @@
+[INFO] 22-11-2024 10:11:29 [main] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "username": "anhtester2002",
+        "firstName": "Son1999",
+        "lastName": "Nguyen1999",
+        "email": "sonng1999@gmail.com",
+        "phone": "0341884321",
+        "userStatus": 1,
+        "id": 1197
+    }
+}
+[INFO] 22-11-2024 10:11:30 [main] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1197,
+        "username": "anhtester2002",
+        "firstName": "Son1999",
+        "lastName": "Nguyen1999",
+        "email": "sonng1999@gmail.com",
+        "phone": "0341884321",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 10:11:31 [main] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1197,
+        "username": "anhtester2002",
+        "firstName": "Son",
+        "lastName": "Nguyen 2077",
+        "email": "sonnt2077@gmail.com",
+        "phone": "0343653192",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 10:11:31 [main] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1197,
+        "username": "anhtester2002",
+        "firstName": "Nghia",
+        "lastName": "Dao",
+        "email": "nghiadt2099@gmail.com",
+        "phone": "0343611732",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 10:11:32 [main] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1197,
+        "username": "anhtester2002",
+        "firstName": "Nghia",
+        "lastName": "Dao",
+        "email": "nghiadt2099@gmail.com",
+        "phone": "0343611732",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 10:11:45 [main] LogUtils - Response: 
+{
+    "message": "Unauthenticated."
+}
+[INFO] 22-11-2024 10:11:46 [main] LogUtils - Response: 
+{
+    "message": "Unauthenticated."
+}
+[INFO] 22-11-2024 10:11:46 [main] LogUtils - Response: 
+{
+    "message": "Unauthenticated."
+}
+[INFO] 22-11-2024 10:12:05 [main] LogUtils - Response: 
+{
+    "message": "The email field is required.",
+    "errors": {
+        "email": [
+            "The email field is required."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:12:05 [main] LogUtils - Response: 
+{
+    "message": "The first name field is required.",
+    "errors": {
+        "firstName": [
+            "The first name field is required."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:12:06 [main] LogUtils - Response: 
+{
+    "message": "The last name field is required.",
+    "errors": {
+        "lastName": [
+            "The last name field is required."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:12:06 [main] LogUtils - Response: 
+{
+    "message": "The password field format is invalid.",
+    "errors": {
+        "password": [
+            "The password field format is invalid."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:12:06 [main] LogUtils - Response: 
+{
+    "message": "The phone field format is invalid.",
+    "errors": {
+        "phone": [
+            "The phone field format is invalid."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:12:07 [main] LogUtils - Response: 
+{
+    "message": "The username field is required.",
+    "errors": {
+        "username": [
+            "The username field is required."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:12:07 [main] LogUtils - Response: 
+{
+    "message": "The selected user status is invalid.",
+    "errors": {
+        "userStatus": [
+            "The selected user status is invalid."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:12:07 [main] LogUtils - Response: 
+{
+    "message": "The email has already been taken.",
+    "errors": {
+        "email": [
+            "The email has already been taken."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:12:08 [main] LogUtils - Response: 
+{
+    "message": "The username has already been taken.",
+    "errors": {
+        "username": [
+            "The username has already been taken."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:12:22 [TestNG-test-User Test-1] LogUtils - Test Started: ValidFlowUser
+[INFO] 22-11-2024 10:12:22 [TestNG-test-User Test-2] LogUtils - Test Started: testInvalidRegisterUser
+[INFO] 22-11-2024 10:12:22 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "The username field is required.",
+    "errors": {
+        "username": [
+            "The username field is required."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:12:22 [TestNG-test-User Test-1] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "username": "anhtester2002",
+        "firstName": "Son1999",
+        "lastName": "Nguyen1999",
+        "email": "sonng1999@gmail.com",
+        "phone": "0341884321",
+        "userStatus": 1,
+        "id": 1198
+    }
+}
+[INFO] 22-11-2024 10:12:22 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "The password field format is invalid.",
+    "errors": {
+        "password": [
+            "The password field format is invalid."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:12:23 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "The first name field is required. (and 1 more error)",
+    "errors": {
+        "firstName": [
+            "The first name field is required."
+        ],
+        "email": [
+            "The email has already been taken."
+        ]
+    }
+}
+[ERROR] 22-11-2024 10:12:23 [TestNG-test-User Test-2] LogUtils - This is fail test case: testInvalidRegisterUser
+
+
+[INFO] 22-11-2024 10:12:23 [TestNG-test-User Test-2] LogUtils - Test Started: testUnauthorizedUser
+[INFO] 22-11-2024 10:12:23 [TestNG-test-User Test-1] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1198,
+        "username": "anhtester2002",
+        "firstName": "Son1999",
+        "lastName": "Nguyen1999",
+        "email": "sonng1999@gmail.com",
+        "phone": "0341884321",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 10:12:23 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "Unauthenticated."
+}
+[INFO] 22-11-2024 10:12:23 [TestNG-test-User Test-1] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1198,
+        "username": "anhtester2002",
+        "firstName": "Son",
+        "lastName": "Nguyen 2077",
+        "email": "sonnt2077@gmail.com",
+        "phone": "0343653192",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 10:12:23 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "Unauthenticated."
+}
+[INFO] 22-11-2024 10:12:23 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "Unauthenticated."
+}
+[INFO] 22-11-2024 10:12:23 [TestNG-test-User Test-2] LogUtils - This is success test case: testUnauthorizedUser
+
+
+[INFO] 22-11-2024 10:12:23 [TestNG-test-User Test-1] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1198,
+        "username": "anhtester2002",
+        "firstName": "Nghia",
+        "lastName": "Dao",
+        "email": "nghiadt2099@gmail.com",
+        "phone": "0343611732",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 10:12:24 [TestNG-test-User Test-1] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1198,
+        "username": "anhtester2002",
+        "firstName": "Nghia",
+        "lastName": "Dao",
+        "email": "nghiadt2099@gmail.com",
+        "phone": "0343611732",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 10:12:24 [TestNG-test-User Test-1] LogUtils - This is success test case: ValidFlowUser
+
+
+[INFO] 22-11-2024 10:12:24 [main] LogUtils - All tests Completed. Passed: 2, Fail: 1, Skipped: 0
+[INFO] 22-11-2024 10:21:57 [TestNG-test-User Test-2] LogUtils - Test Started: testInvalidRegisterUser
+[INFO] 22-11-2024 10:21:57 [TestNG-test-User Test-1] LogUtils - Test Started: ValidFlowUser
+[INFO] 22-11-2024 10:21:57 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "The username field is required.",
+    "errors": {
+        "username": [
+            "The username field is required."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:21:57 [TestNG-test-User Test-1] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "username": "anhtester2002",
+        "firstName": "Son1999",
+        "lastName": "Nguyen1999",
+        "email": "sonng1999@gmail.com",
+        "phone": "0341884321",
+        "userStatus": 1,
+        "id": 1199
+    }
+}
+[INFO] 22-11-2024 10:21:57 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "The password field format is invalid.",
+    "errors": {
+        "password": [
+            "The password field format is invalid."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:21:58 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "The first name field is required.",
+    "errors": {
+        "firstName": [
+            "The first name field is required."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:21:58 [TestNG-test-User Test-1] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1199,
+        "username": "anhtester2002",
+        "firstName": "Son1999",
+        "lastName": "Nguyen1999",
+        "email": "sonng1999@gmail.com",
+        "phone": "0341884321",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 10:21:58 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "The last name field is required. (and 1 more error)",
+    "errors": {
+        "lastName": [
+            "The last name field is required."
+        ],
+        "email": [
+            "The email has already been taken."
+        ]
+    }
+}
+[ERROR] 22-11-2024 10:21:58 [TestNG-test-User Test-2] LogUtils - This is fail test case: testInvalidRegisterUser
+
+
+[INFO] 22-11-2024 10:21:58 [TestNG-test-User Test-2] LogUtils - Test Started: testUnauthorizedUser
+[INFO] 22-11-2024 10:21:58 [TestNG-test-User Test-1] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1199,
+        "username": "anhtester2002",
+        "firstName": "Son",
+        "lastName": "Nguyen 2077",
+        "email": "sonnt2077@gmail.com",
+        "phone": "0343653192",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 10:21:58 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "Unauthenticated."
+}
+[INFO] 22-11-2024 10:21:59 [TestNG-test-User Test-1] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1199,
+        "username": "anhtester2002",
+        "firstName": "Nghia",
+        "lastName": "Dao",
+        "email": "nghiadt2099@gmail.com",
+        "phone": "0343611732",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 10:21:59 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "Unauthenticated."
+}
+[INFO] 22-11-2024 10:21:59 [TestNG-test-User Test-1] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1199,
+        "username": "anhtester2002",
+        "firstName": "Nghia",
+        "lastName": "Dao",
+        "email": "nghiadt2099@gmail.com",
+        "phone": "0343611732",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 10:21:59 [TestNG-test-User Test-1] LogUtils - This is success test case: ValidFlowUser
+
+
+[INFO] 22-11-2024 10:21:59 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "Unauthenticated."
+}
+[INFO] 22-11-2024 10:21:59 [TestNG-test-User Test-2] LogUtils - This is success test case: testUnauthorizedUser
+
+
+[INFO] 22-11-2024 10:21:59 [main] LogUtils - All tests Completed. Passed: 2, Fail: 1, Skipped: 0
+[INFO] 22-11-2024 10:24:08 [TestNG-test-User Test-1] LogUtils - Test Started: ValidFlowUser
+[INFO] 22-11-2024 10:24:08 [TestNG-test-User Test-2] LogUtils - Test Started: testInvalidRegisterUser
+[INFO] 22-11-2024 10:24:08 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "The username field is required.",
+    "errors": {
+        "username": [
+            "The username field is required."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:24:08 [TestNG-test-User Test-1] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "username": "anhtester2002",
+        "firstName": "Son1999",
+        "lastName": "Nguyen1999",
+        "email": "sonng1999@gmail.com",
+        "phone": "0341884321",
+        "userStatus": 1,
+        "id": 1200
+    }
+}
+[INFO] 22-11-2024 10:24:09 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "The password field format is invalid.",
+    "errors": {
+        "password": [
+            "The password field format is invalid."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:24:09 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "The first name field is required.",
+    "errors": {
+        "firstName": [
+            "The first name field is required."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:24:09 [TestNG-test-User Test-1] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1200,
+        "username": "anhtester2002",
+        "firstName": "Son1999",
+        "lastName": "Nguyen1999",
+        "email": "sonng1999@gmail.com",
+        "phone": "0341884321",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 10:24:09 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "The last name field is required.",
+    "errors": {
+        "lastName": [
+            "The last name field is required."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:24:10 [TestNG-test-User Test-1] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1200,
+        "username": "anhtester2002",
+        "firstName": "Son",
+        "lastName": "Nguyen 2077",
+        "email": "sonnt2077@gmail.com",
+        "phone": "0343653192",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 10:24:10 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "The email has already been taken.",
+    "errors": {
+        "email": [
+            "The email has already been taken."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:24:10 [TestNG-test-User Test-1] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1200,
+        "username": "anhtester2002",
+        "firstName": "Nghia",
+        "lastName": "Dao",
+        "email": "nghiadt2099@gmail.com",
+        "phone": "0343611732",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 10:24:10 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "The phone field format is invalid.",
+    "errors": {
+        "phone": [
+            "The phone field format is invalid."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:24:10 [TestNG-test-User Test-1] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1200,
+        "username": "anhtester2002",
+        "firstName": "Nghia",
+        "lastName": "Dao",
+        "email": "nghiadt2099@gmail.com",
+        "phone": "0343611732",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 10:24:10 [TestNG-test-User Test-1] LogUtils - This is success test case: ValidFlowUser
+
+
+[INFO] 22-11-2024 10:24:10 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "The selected user status is invalid.",
+    "errors": {
+        "userStatus": [
+            "The selected user status is invalid."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:24:11 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "The username has already been taken.",
+    "errors": {
+        "username": [
+            "The username has already been taken."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:24:11 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "The email has already been taken.",
+    "errors": {
+        "email": [
+            "The email has already been taken."
+        ]
+    }
+}
+[INFO] 22-11-2024 10:24:11 [TestNG-test-User Test-2] LogUtils - This is success test case: testInvalidRegisterUser
+
+
+[INFO] 22-11-2024 10:24:11 [TestNG-test-User Test-2] LogUtils - Test Started: testUnauthorizedUser
+[INFO] 22-11-2024 10:24:11 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "Unauthenticated."
+}
+[INFO] 22-11-2024 10:24:12 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "Unauthenticated."
+}
+[INFO] 22-11-2024 10:24:12 [TestNG-test-User Test-2] LogUtils - Response: 
+{
+    "message": "Unauthenticated."
+}
+[INFO] 22-11-2024 10:24:12 [TestNG-test-User Test-2] LogUtils - This is success test case: testUnauthorizedUser
+
+
+[INFO] 22-11-2024 10:24:12 [main] LogUtils - All tests Completed. Passed: 3, Fail: 0, Skipped: 0
+[INFO] 22-11-2024 13:25:12 [main] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "username": "anhtester2002",
+        "firstName": "Son1999",
+        "lastName": "Nguyen1999",
+        "email": "sonng1999@gmail.com",
+        "phone": "0341884321",
+        "userStatus": 1,
+        "id": 1203
+    }
+}
+[INFO] 22-11-2024 13:25:12 [main] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1203,
+        "username": "anhtester2002",
+        "firstName": "Son1999",
+        "lastName": "Nguyen1999",
+        "email": "sonng1999@gmail.com",
+        "phone": "0341884321",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 13:25:13 [main] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1203,
+        "username": "anhtester2002",
+        "firstName": "Son",
+        "lastName": "Nguyen 2077",
+        "email": "sonnt2077@gmail.com",
+        "phone": "0343653192",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 13:25:13 [main] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1203,
+        "username": "anhtester2002",
+        "firstName": "Nghia",
+        "lastName": "Dao",
+        "email": "nghiadt2099@gmail.com",
+        "phone": "0343611732",
+        "userStatus": 1
+    }
+}
+[INFO] 22-11-2024 13:25:13 [main] LogUtils - Response: 
+{
+    "message": "Success",
+    "response": {
+        "id": 1203,
+        "username": "anhtester2002",
+        "firstName": "Nghia",
+        "lastName": "Dao",
+        "email": "nghiadt2099@gmail.com",
+        "phone": "0343611732",
+        "userStatus": 1
+    }
+}

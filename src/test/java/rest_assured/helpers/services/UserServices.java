@@ -52,7 +52,7 @@ public class UserServices {
         return response;
     }
 
-    public static Response updatePartiallyUser(UpdateUser updateUser, String userId, String TOKEN) {
+    public static Response updatePartiallyUser(UpdateUser updateUser, String userId) {
         Response response= given()
                 .spec(SpecBuilder.getRequestSpecBuilder())
                 .pathParam("userId",userId)
@@ -74,10 +74,10 @@ public class UserServices {
         return response;
     }
 
-    public static Response deleteUser(String username, String TOKEN) {
+    public static Response deleteUser(String username) {
         Response response= given().accept("*/*")
+                .spec(SpecBuilder.getRequestSpecBuilder())
                 .queryParam("username", username)
-                .headers("Authorization", "Bearer " + TOKEN)
                 .when().delete(Routes.deleteUser_URL);
 
         LogUtils.info("Response: \n" + response.asPrettyString());

@@ -2,6 +2,7 @@ package rest_assured.api;
 
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
+import rest_assured.helpers.assertions.CommonAssertion;
 import rest_assured.helpers.assertions.UserAssertion;
 import rest_assured.helpers.services.UserServices;
 import rest_assured.payload.request.RegisterUserRequest;
@@ -16,7 +17,7 @@ public class InvalidRegisterUserAPI {
         registerUser.setPassword("Demo@123");
         registerUser.setFirstName("Son1999");
         registerUser.setLastName("Nguyen1999");
-        registerUser.setEmail("sonng1999@gmail.com");
+        registerUser.setEmail("hatbui3000@gmail.com");
         registerUser.setPhone("0341884321");
         registerUser.setUserStatus(1);
 
@@ -25,6 +26,9 @@ public class InvalidRegisterUserAPI {
 
 
         //
+        CommonAssertion.assertHeader(response,"vary","Accept-Encoding");
+        CommonAssertion.assertStatusCode(response,422);
+        CommonAssertion.assertContentType(response, "application/json");
         String message = "The username field is required.";
         UserAssertion.assertErrorMessage(response, message);
         UserAssertion.assertErrorUsername(response, message);
@@ -46,6 +50,9 @@ public class InvalidRegisterUserAPI {
         Response response = UserServices.registerUser(registerUser);
 
         //
+        CommonAssertion.assertHeader(response,"vary","Accept-Encoding");
+        CommonAssertion.assertStatusCode(response,422);
+        CommonAssertion.assertContentType(response, "application/json");
         String message = "The password field format is invalid.";
         UserAssertion.assertErrorMessage(response, message);
         UserAssertion.assertErrorPassword(response, message);
@@ -59,7 +66,7 @@ public class InvalidRegisterUserAPI {
         registerUser.setPassword("Demo@123");
         registerUser.setFirstName("");
         registerUser.setLastName("Nguyen1999");
-        registerUser.setEmail("sonng1999@gmail.com");
+        registerUser.setEmail("sonng9999@gmail.com");
         registerUser.setPhone("0341884321");
         registerUser.setUserStatus(1);
 
@@ -67,6 +74,9 @@ public class InvalidRegisterUserAPI {
         Response response = UserServices.registerUser(registerUser);
 
         //
+        CommonAssertion.assertHeader(response,"vary","Accept-Encoding");
+        CommonAssertion.assertStatusCode(response,422);
+        CommonAssertion.assertContentType(response, "application/json");
         String message = "The first name field is required.";
         UserAssertion.assertMessage(response, message);
         UserAssertion.assertErrorFirstName(response, message);
@@ -80,7 +90,7 @@ public class InvalidRegisterUserAPI {
         registerUser.setPassword("Demo@123");
         registerUser.setFirstName("Anh");
         registerUser.setLastName("");
-        registerUser.setEmail("sonng1999@gmail.com");
+        registerUser.setEmail("hatbui3000@gmail.com");
         registerUser.setPhone("0341884321");
         registerUser.setUserStatus(1);
 
@@ -88,6 +98,9 @@ public class InvalidRegisterUserAPI {
         Response response = UserServices.registerUser(registerUser);
 
         //
+        CommonAssertion.assertHeader(response,"vary","Accept-Encoding");
+        CommonAssertion.assertStatusCode(response,422);
+        CommonAssertion.assertContentType(response, "application/json");
         String message = "The last name field is required.";
         UserAssertion.assertMessage(response, message);
         UserAssertion.assertErrorLastName(response, message);
@@ -109,6 +122,9 @@ public class InvalidRegisterUserAPI {
         Response response = UserServices.registerUser(registerUser);
 
         //
+        CommonAssertion.assertHeader(response,"vary","Accept-Encoding");
+        CommonAssertion.assertStatusCode(response,422);
+        CommonAssertion.assertContentType(response, "application/json");
         String message = "The email field is required.";
         UserAssertion.assertMessage(response, message);
         UserAssertion.assertErrorEmail(response, message);
@@ -130,6 +146,9 @@ public class InvalidRegisterUserAPI {
         Response response = UserServices.registerUser(registerUser);
 
         //
+        CommonAssertion.assertHeader(response,"vary","Accept-Encoding");
+        CommonAssertion.assertStatusCode(response,422);
+        CommonAssertion.assertContentType(response, "application/json");
         String message = "The phone field format is invalid.";
         UserAssertion.assertMessage(response, message);
         UserAssertion.assertErrorPhone(response, message);
@@ -151,6 +170,9 @@ public class InvalidRegisterUserAPI {
         Response response = UserServices.registerUser(registerUser);
 
         //
+        CommonAssertion.assertHeader(response,"vary","Accept-Encoding");
+        CommonAssertion.assertStatusCode(response,422);
+        CommonAssertion.assertContentType(response, "application/json");
         String message = "The selected user status is invalid.";
         UserAssertion.assertMessage(response, message);
         UserAssertion.assertErrorUserStatus(response, message);
@@ -172,6 +194,9 @@ public class InvalidRegisterUserAPI {
         Response response = UserServices.registerUser(registerUser);
 
         //
+        CommonAssertion.assertHeader(response,"vary","Accept-Encoding");
+        CommonAssertion.assertStatusCode(response,422);
+        CommonAssertion.assertContentType(response, "application/json");
         String message = "The username has already been taken.";
         UserAssertion.assertMessage(response, message);
         UserAssertion.assertErrorUsername(response, message);
@@ -193,6 +218,9 @@ public class InvalidRegisterUserAPI {
         Response response = UserServices.registerUser(registerUser);
 
         //
+        CommonAssertion.assertHeader(response,"vary","Accept-Encoding");
+        CommonAssertion.assertStatusCode(response,422);
+        CommonAssertion.assertContentType(response, "application/json");
         String message = "The email has already been taken.";
         UserAssertion.assertMessage(response, message);
         UserAssertion.assertErrorEmail(response, message);

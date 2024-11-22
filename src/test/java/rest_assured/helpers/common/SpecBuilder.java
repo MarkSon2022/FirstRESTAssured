@@ -24,13 +24,4 @@ public class SpecBuilder {
                 .log(LogDetail.ALL)
                 .build();
     }
-
-    public static ResponseSpecification getResponseSpecBuilder(int statusCode){
-        return new ResponseSpecBuilder()
-                .expectStatusCode(statusCode)
-                .expectContentType(ContentType.JSON)
-
-                .build();
-    }
-
 }
