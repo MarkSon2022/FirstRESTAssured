@@ -1,4 +1,4 @@
-package rest_assured.globals;
+package rest_assured.helpers.common;
 
 public class TokenGlobal {
     public static String TOKEN = "";

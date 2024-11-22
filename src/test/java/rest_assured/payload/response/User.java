@@ -1,12 +1,24 @@
 package rest_assured.payload.response;
 
-public class RegisterUser {
+public class User {
     private String username;
     private String firstName;
     private String lastName;
     private String email;
     private String userStatus;
     private String id;
+
+    public User() {
+    }
+
+    public User(String username, String firstName, String lastName, String email, String userStatus, String id) {
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.userStatus = userStatus;
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;

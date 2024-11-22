@@ -1,4 +1,4 @@
-package rest_assured.endpoints.keywords;
+package rest_assured.endpoints;
 
 public class Routes {
     //Base Url to use
