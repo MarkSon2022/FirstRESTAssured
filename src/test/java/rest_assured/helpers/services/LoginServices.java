@@ -16,6 +16,8 @@ public class LoginServices {
         Response response = given()
                 .spec(SpecBuilder.getRequestSpecNoAuthBuilder())
                 .body(userLogin)
+                //.cookie("session_id", "abc123")
+                //.auth().form("admin", "admin")//Form Authentication
                 .when().post(Routes.login_URL);
 
         return response;
@@ -26,9 +28,9 @@ public class LoginServices {
         Response response = given()
                 .spec(SpecBuilder.getRequestSpecNoAuthBuilder())
                 .body(new File(filePath + fileName))
-                .when().post(Routes.login_URL)
-                .then()
-                .extract().response();
+                //.cookie("session_id", "abc123")
+                //.auth().basic("username", "password")//Basic Authentication
+                .when().post(Routes.login_URL);
 
         return response;
     }
@@ -37,6 +39,7 @@ public class LoginServices {
         Response response = given()
                 .spec(SpecBuilder.getRequestSpecNoAuthBuilder())
                 .body(ConvertUtils.convertXmlFileToJsonString(fileName, key))
+                //.cookie("session_id", "abc123")
                 .when().post(Routes.login_URL);
 
         return response;

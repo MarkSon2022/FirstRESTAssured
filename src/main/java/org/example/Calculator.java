@@ -2,36 +2,49 @@ package org.example;
 
 public class Calculator {
 
-    public int add(int num1, int num2) {
-        return num1 + num2;
-    }
-
-    public int subtract(int num1, int num2) {
-        return num1 - num2;
-    }
-
-    public int multiply(int num1, int num2) {
-        return num1 * num2;
-    }
-
-
-    public int divide(int num1, int num2) {
-        if (num2 == 0) {
-            throw new ArithmeticException("Cannot divide by zero");
+    public static boolean isPrime(int n) {
+        if (n <= 1) {
+            return false;
         }
-        return num1 / num2;
+
+        for (int i = 2; i <= n / 2; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
-    public boolean isPositive(int num) {
-        return num > 0;
+    public static int USCLN(int a, int b) {
+        int temp1 = a;
+        int temp2 = b;
+        while (temp1 != temp2) {
+            if (temp1 > temp2) {
+                temp1 -= temp2;
+            } else {
+                temp2 -= temp1;
+            }
+        }
+        int uscln = temp1;
+        return uscln;
     }
 
-    public boolean isNegative(int num) {
-        return num < 0;
+    public static int BSCNN(int a, int b) {
+        return (a * b) / USCLN(a, b);
     }
 
-    public int findMax(int num1, int num2) {
-        return (num1 > num2) ? num1 : num2;
+    public static boolean isLeapYear(int year) {
+        if (year % 4 != 0) {
+            return false;
+        } else if (year % 400 == 0) {
+            return true;
+        } else if (year % 100 == 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
+
 
 }
