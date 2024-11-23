@@ -4,7 +4,7 @@ target/
 !**/src/test/**/target/
 /src/test/resources/testdata
 /test-output
-/logs
+/logs/applog.log
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
