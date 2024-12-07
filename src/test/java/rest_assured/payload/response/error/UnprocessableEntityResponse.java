@@ -3,8 +3,10 @@ package rest_assured.payload.response.error;
 public class UnprocessableEntityResponse {
     private String message;
     private ErrorEntity errors;
+
     public UnprocessableEntityResponse() {
     }
+
     public UnprocessableEntityResponse(String message, ErrorEntity errors) {
         this.message = message;
         this.errors = errors;

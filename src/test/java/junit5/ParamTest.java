@@ -18,6 +18,12 @@ public class ParamTest {
         calculator = new Calculator();
     }
 
+    @AfterAll
+    static void tearDownAll() {
+        System.out.println("Tearing down all tests...");
+        calculator = null;
+    }
+
     @BeforeEach
     void setUp() {
         System.out.println("Setting up before each test...");
@@ -81,12 +87,6 @@ public class ParamTest {
     @AfterEach
     void tearDown() {
         System.out.println("Tearing down after each test...");
-    }
-
-    @AfterAll
-    static void tearDownAll() {
-        System.out.println("Tearing down all tests...");
-        calculator = null;
     }
 }
 

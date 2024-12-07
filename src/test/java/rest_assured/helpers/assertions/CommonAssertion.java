@@ -2,8 +2,9 @@ package rest_assured.helpers.assertions;
 
 import io.restassured.response.Response;
 import org.testng.Assert;
-import rest_assured.helpers.common.TokenGlobal;
+import rest_assured.helpers.common.SpecBuilder;
 import rest_assured.payload.response.LoginResponse;
+import rest_assured.payload.response.error.LoginErrorResponse;
 import rest_assured.payload.response.error.UnauthorizedResponse;
 
 public class CommonAssertion {
@@ -25,20 +26,21 @@ public class CommonAssertion {
 
     public static void assertHeader(Response response, String headerName, String headerValue) {
         //application/json
-        Assert.assertNotNull(response.getHeader(headerName),"The header should exist");
+        Assert.assertNotNull(response.getHeader(headerName), "The header should exist");
         Assert.assertEquals(response.getHeader(headerName), headerValue, "The header value should match!!");
-    }
-
-    public static void assertCookies(Response response) {
-        Assert.assertNotNull(response.getCookies(), "The cookies should exist!");
-        Assert.assertFalse(response.getCookies().isEmpty(), "The cookies should exist!");
     }
 
     public static void assertTokenExist(Response response) {
         LoginResponse loginResponse = response.then().extract().as(LoginResponse.class);
         Assert.assertNotNull(loginResponse.getToken(), "This token should not be null");
         Assert.assertFalse(loginResponse.getToken().isEmpty(), "This token should not be empty");
-        Assert.assertFalse(TokenGlobal.TOKEN.isEmpty(), "This token should not be empty");
+        Assert.assertFalse(SpecBuilder.TOKEN.isEmpty(), "This token should not be empty");
+    }
+
+    public static void assertLoginError(Response response, String errorMessage) {
+        LoginErrorResponse loginResponse = response.then().extract().as(LoginErrorResponse.class);
+        Assert.assertEquals(loginResponse.getMessage(), "Login failed", "This should pop up error message");
+        Assert.assertEquals(loginResponse.getErrors(), errorMessage, "This should pop up error message");
     }
 
 }

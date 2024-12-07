@@ -142,7 +142,7 @@
                     <perCoreThreadCount>false</perCoreThreadCount>
                     <forkCount>1</forkCount>
                     <!--       Enable retry test             -->
-                    <rerunFailingTestsCount>3</rerunFailingTestsCount>
+<!--                    <rerunFailingTestsCount>3</rerunFailingTestsCount>-->
                 </configuration>
             </plugin>
         </plugins>

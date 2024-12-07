@@ -5,6 +5,7 @@
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
         <listener class-name="rest_assured.utils.TestListener"/>
+<!--        <listener class-name="rest_assured.utils.RetryTransformer"/>-->
     </listeners>
     <test name="User Test" parallel="classes">
         <classes>

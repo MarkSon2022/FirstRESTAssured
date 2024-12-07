@@ -3,12 +3,13 @@ package rest_assured.helpers.assertions;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
+import rest_assured.payload.assertion.UserAssertionModel;
 import rest_assured.payload.response.UserResponse;
 import rest_assured.payload.response.error.UnprocessableEntityResponse;
 
 public class UserAssertion {
 
-    public static SoftAssert softAssert= new SoftAssert();
+    public static SoftAssert softAssert = new SoftAssert();
 
     //VALID ASSERTION
     public static void assertMessage(Response response, String message) {
@@ -16,7 +17,6 @@ public class UserAssertion {
                 .then().extract().as(UserResponse.class);
         Assert.assertEquals(messageResponse.getMessage(), message, "This message should match: ");
     }
-
 
     public static void assertUsername(Response response, String username) {
         UserResponse registerUserResponse = response
@@ -30,53 +30,48 @@ public class UserAssertion {
         Assert.assertEquals(registerUserResponse.getResponse().getFirstName(), firstName, "This firstname should match: ");
     }
 
-    //ERROR ASSERTION
-    public static void assertErrorMessage(Response response, String message) {
-        UnprocessableEntityResponse messageResponse = response
-                .then().extract().as(UnprocessableEntityResponse.class);
-        Assert.assertEquals(messageResponse.getMessage(), message, "This message should match: ");
+    public static void assertUser(Response response, UserAssertionModel user) {
+
+        UserResponse userResponse = response
+                .then().extract().as(UserResponse.class);
+
+        if (userResponse.getResponse().getUsername() != null && !userResponse.getResponse().getUsername().trim().isEmpty()) {
+            Assert.assertEquals(userResponse.getResponse().getUsername(), user.getUsername(), "This username should match: ");
+        }
+
+        if (userResponse.getResponse().getFirstName() != null && !userResponse.getResponse().getFirstName().trim().isEmpty()) {
+            Assert.assertEquals(userResponse.getResponse().getFirstName(), user.getFirstName(), "This first name should match: ");
+        }
+
+        if (userResponse.getResponse().getLastName() != null && !userResponse.getResponse().getLastName().trim().isEmpty()) {
+            Assert.assertEquals(userResponse.getResponse().getLastName(), user.getLastName(), "This last name should match: ");
+        }
+
+        if (userResponse.getResponse().getPhone() != null && !userResponse.getResponse().getPhone().trim().isEmpty()) {
+            Assert.assertEquals(userResponse.getResponse().getPhone(), user.getPhone(), "This phone should match: ");
+        }
+
+        if (userResponse.getResponse().getEmail() != null && !userResponse.getResponse().getEmail().trim().isEmpty()) {
+            Assert.assertEquals(userResponse.getResponse().getEmail(), user.getEmail(), "This email should match: ");
+        }
+
+        if (userResponse.getResponse().getUserStatus() == 0 || userResponse.getResponse().getUserStatus() == 1) {
+            Assert.assertEquals(userResponse.getResponse().getUserStatus(), user.getUserStatus(), "This user status should match: ");
+        }
+
     }
 
+    //ERROR ASSERTION
     public static void assertErrorUsername(Response response, String message) {
         UnprocessableEntityResponse errorResponse = response
                 .then().extract().as(UnprocessableEntityResponse.class);
         Assert.assertEquals(errorResponse.getError().getUsername().get(0), message, "The username message should match: ");
     }
 
-    public static void assertErrorFirstName(Response response, String message) {
-        UnprocessableEntityResponse errorResponse = response
-                .then().extract().as(UnprocessableEntityResponse.class);
-        Assert.assertEquals(errorResponse.getError().getFirstName().get(0), message, "The first name message should match: ");
-    }
-
-    public static void assertErrorLastName(Response response, String message) {
-        UnprocessableEntityResponse errorResponse = response
-                .then().extract().as(UnprocessableEntityResponse.class);
-        Assert.assertEquals(errorResponse.getError().getLastName().get(0), message, "The last name message should match: ");
-    }
-
-    public static void assertErrorPassword(Response response, String message) {
-        UnprocessableEntityResponse errorResponse = response
-                .then().extract().as(UnprocessableEntityResponse.class);
-        Assert.assertEquals(errorResponse.getError().getPassword().get(0), message, "The password message should match: ");
-    }
-
     public static void assertErrorEmail(Response response, String message) {
         UnprocessableEntityResponse errorResponse = response
                 .then().extract().as(UnprocessableEntityResponse.class);
         Assert.assertEquals(errorResponse.getError().getEmail().get(0), message, "The email message should match: ");
-    }
-
-    public static void assertErrorPhone(Response response, String message) {
-        UnprocessableEntityResponse errorResponse = response
-                .then().extract().as(UnprocessableEntityResponse.class);
-        Assert.assertEquals(errorResponse.getError().getPhone().get(0), message, "The email message should match: ");
-    }
-
-    public static void assertErrorUserStatus(Response response, String message) {
-        UnprocessableEntityResponse errorResponse = response
-                .then().extract().as(UnprocessableEntityResponse.class);
-        Assert.assertEquals(errorResponse.getError().getUserStatus().get(0), message, "The email message should match: ");
     }
 
 }

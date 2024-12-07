@@ -1,24 +1,13 @@
-package rest_assured.payload.response;
+package rest_assured.payload.assertion;
 
-public class User {
+public class UserAssertionModel {
+
     private String username;
     private String firstName;
     private String lastName;
     private String email;
-    private int userStatus;
     private String phone;
-    private String id;
-
-    public User() {
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+    private int userStatus;
 
     public String getUsername() {
         return username;
@@ -52,19 +41,19 @@ public class User {
         this.email = email;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public int getUserStatus() {
         return userStatus;
     }
 
     public void setUserStatus(int userStatus) {
         this.userStatus = userStatus;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 }

@@ -1,6 +1,8 @@
 package rest_assured.utils;
+
 import org.json.JSONObject;
 import org.json.XML;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 

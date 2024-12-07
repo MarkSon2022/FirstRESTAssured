@@ -12,6 +12,15 @@ public class UpdateUser {
     public UpdateUser() {
     }
 
+    public UpdateUser(String username, String firstName, String lastName, String email, String password, String phone, int userStatus) {
+        setUsername(username);
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmail(email);
+        setPassword(password);
+        setPhone(phone);
+        setUserStatus(userStatus);
+    }
 
     public String getUsername() {
         return username;
@@ -20,6 +29,7 @@ public class UpdateUser {
     public void setUsername(String username) {
         if (username == null || username.trim().isEmpty()) {
             throw new IllegalArgumentException("Username cannot be empty");
+
         }
         if (username.length() < 3 || username.length() > 20) {
             throw new IllegalArgumentException("Username must be between 3 and 20");

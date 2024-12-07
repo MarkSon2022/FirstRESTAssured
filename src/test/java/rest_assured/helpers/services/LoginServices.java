@@ -3,7 +3,6 @@ package rest_assured.helpers.services;
 import io.restassured.response.Response;
 import rest_assured.endpoints.Routes;
 import rest_assured.helpers.common.SpecBuilder;
-import rest_assured.helpers.common.TokenGlobal;
 import rest_assured.payload.request.LoginRequest;
 import rest_assured.utils.ConvertUtils;
 
@@ -43,18 +42,6 @@ public class LoginServices {
                 //.cookie("session_id", "abc123")
                 .when().post(Routes.login_URL);
 
-        return response;
-    }
-
-    public static Response LoginWithOAuth2() {
-        Response response = given().log().all()
-                .formParam("client_id", "692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com")
-                .formParam("client_secret", "erZOWM9g3UtwNRj340YYaK_W")
-                .formParam("grant_type", "client_credentials")
-                .formParam("scope", "trust")
-                .when().log().all().post("https://rahulshettyacademy.com/oauthapi/oauth2/resourceOwner/token");
-
-        TokenGlobal.TOKEN = response.jsonPath().getString("access_token");
         return response;
     }
 

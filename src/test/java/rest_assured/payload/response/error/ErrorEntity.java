@@ -10,6 +10,7 @@ public class ErrorEntity {
     private List<String> password;
     private List<String> phone;
     private List<String> userStatus;
+
     public ErrorEntity() {
     }
 
